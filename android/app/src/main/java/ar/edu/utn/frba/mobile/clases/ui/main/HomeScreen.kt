@@ -7,20 +7,23 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import ar.edu.utn.frba.mobile.clases.R
+import ar.edu.utn.frba.mobile.clases.ui.UiString
 
 @Composable
-fun HomeScreen(navController: NavController? = null) {
+fun HomeScreen(
+    viewModel: MainViewModel,
+    onButtonClicked: (UiString) -> Unit,
+    navController: NavController? = null) {
     AppScaffold(navController = navController) {
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier.fillMaxSize()
         ) {
-            Button(onClick = {}) {
-                Text(text = stringResource(id = R.string.soy_un_button))
+            Button(onClick = { onButtonClicked(viewModel.salute) }) {
+                Text(text = viewModel.label ?: "")
             }
         }
     }
@@ -29,5 +32,10 @@ fun HomeScreen(navController: NavController? = null) {
 @Preview
 @Composable
 fun DefaultPreview() {
-    HomeScreen()
+    val viewModel = viewModel<MainViewModel>()
+    viewModel.label = "Botonito"
+    HomeScreen(
+        viewModel = viewModel,
+        onButtonClicked = {}
+    )
 }
