@@ -2,5 +2,6 @@
     <string name="app_name">Clases</string>
     <string name="salute">¡Hola a todes!</string>
     <string name="soy_un_button">Soy un Button</string>
+    <string name="soy_un_textview">Soy un TextView</string>
     <string name="ok">Ok</string>
 </resources>
