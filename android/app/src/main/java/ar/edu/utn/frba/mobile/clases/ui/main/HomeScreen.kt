@@ -13,13 +13,13 @@ import androidx.navigation.NavController
 import ar.edu.utn.frba.mobile.clases.R
 
 @Composable
-fun HomeScreen(navController: NavController? = null) {
+fun HomeScreen(onNavigateToMovies: () -> Unit, navController: NavController? = null) {
     AppScaffold(navController = navController) {
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier.fillMaxSize()
         ) {
-            Button(onClick = {}) {
+            Button(onClick = onNavigateToMovies) {
                 Text(text = stringResource(id = R.string.soy_un_button))
             }
         }
@@ -29,5 +29,5 @@ fun HomeScreen(navController: NavController? = null) {
 @Preview
 @Composable
 fun DefaultPreview() {
-    HomeScreen()
+    HomeScreen(onNavigateToMovies = {})
 }
