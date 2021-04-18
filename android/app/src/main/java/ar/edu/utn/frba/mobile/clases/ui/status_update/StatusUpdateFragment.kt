@@ -1,63 +1,57 @@
-package ar.edu.utn.frba.mobile.clases.ui.main
+package ar.edu.utn.frba.mobile.clases.ui.status_update
 
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import ar.edu.utn.frba.mobile.clases.R
 import ar.edu.utn.frba.mobile.clases.databinding.MainFragmentBinding
-import ar.edu.utn.frba.mobile.clases.ui.status_update.StatusUpdateFragment
-
-private const val ARG_TITLE = "title"
+import ar.edu.utn.frba.mobile.clases.databinding.StatusUpdateFragmentBinding
 
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [MainFragment.OnFragmentInteractionListener] interface
+ * [StatusUpdateFragment.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [MainFragment.newInstance] factory method to
+ * Use the [StatusUpdateFragment.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class MainFragment : Fragment() {
-    private var _binding: MainFragmentBinding? = null
+class StatusUpdateFragment : Fragment(), ColorsAdapter.ItemClickListener {
+    private var _binding: StatusUpdateFragmentBinding? = null
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
 
-    private var title: String? = null
     private var listener: OnFragmentInteractionListener? = null
-    private lateinit var viewModel: MainViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            title = it.getString(ARG_TITLE)
-        }
+    val colorsAdapter = ColorsAdapter(this)
+    val backgroundDrawable = GradientDrawable().apply {
+        orientation = GradientDrawable.Orientation.TL_BR
+        setColor(Color.WHITE)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = MainFragmentBinding.inflate(inflater, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        _binding = StatusUpdateFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
-        binding.okButton.text = title
-        binding.okButton.setOnClickListener {
-            onButtonPressed()
+        view.findViewById<RecyclerView>(R.id.colorsRecycler).apply {
+            layoutManager = LinearLayoutManager(context).apply {
+                orientation = LinearLayoutManager.HORIZONTAL
+            }
+            adapter = colorsAdapter
         }
-    }
-
-    fun onButtonPressed() {
-        listener?.showFragment(StatusUpdateFragment())
+        binding.textField.background = backgroundDrawable
+        binding.textField.setTextColor(Color.WHITE)
     }
 
     override fun onAttach(context: Context) {
@@ -74,6 +68,13 @@ class MainFragment : Fragment() {
         listener = null
     }
 
+    override fun onItemClick(position: Int) {
+        val colors = PostTheme.getBackgroundColors(position)
+        backgroundDrawable.colors = colors
+        val backColor = colors.get(0)
+        binding.textField.setTextColor(PostTheme.getTextColor(backColor))
+    }
+
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -86,7 +87,6 @@ class MainFragment : Fragment() {
      * for more information.
      */
     interface OnFragmentInteractionListener {
-        fun showFragment(fragment: Fragment)
     }
 
     companion object {
@@ -94,15 +94,10 @@ class MainFragment : Fragment() {
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
          *
-         * @param title Title.
-         * @return A new instance of fragment MainFragment.
+         * @return A new instance of fragment StatusUpdate.
          */
         @JvmStatic
-        fun newInstance(title: String) =
-            MainFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_TITLE, title)
-                }
-            }
+        fun newInstance() =
+            StatusUpdateFragment()
     }
 }
