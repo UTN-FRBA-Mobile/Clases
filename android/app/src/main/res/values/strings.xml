@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">Clases</string>
+    <string name="app_name">Clases 2020c2</string>
     <string name="salute">¡Hola a todes!</string>
-    <string name="soy_un_button">Soy un Button</string>
-    <string name="ok">Ok</string>
+    <string name="hello">Hola a todos</string>
+    <string name="whatAreYouThinking">¿Qué estás pensando?</string>
+    <string name="addToYourPost">Agregar a tu publicación</string>
+    <string name="friends">Amigos</string>
+    <string name="album">Álbum</string>
 </resources>

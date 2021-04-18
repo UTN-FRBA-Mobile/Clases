@@ -7,4 +7,22 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="settingButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:background">@drawable/button_background</item>
+    </style>
+    <style name="colorButton" parent="settingButton">
+        <item name="android:layout_width">@dimen/color_size</item>
+        <item name="android:layout_height">@dimen/color_size</item>
+        <item name="android:layout_margin">4dp</item>
+    </style>
+    <style name="addToPostButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
 </resources>
