@@ -9,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import ar.edu.utn.frba.mobile.clases.ui.main.HomeScreen
+import ar.edu.utn.frba.mobile.clases.ui.movies.MoviesScreen
 
 class MainComposeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +25,14 @@ class MainComposeActivity : ComponentActivity() {
 private fun App() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "home") {
-        composable("home") { HomeScreen() }
+        composable("home") {
+            HomeScreen(
+                onNavigateToMovies = { navController.navigate("movies") },
+                navController = navController)
+        }
+        composable("movies") {
+            MoviesScreen(
+                navController = navController)
+        }
     }
 }
