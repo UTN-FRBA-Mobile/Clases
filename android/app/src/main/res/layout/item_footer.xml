@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/itemPadding"
+              android:gravity="center_vertical">
+    <ImageView style="@style/footerIcon"
+               android:src="@drawable/ic_chat_bubble_outline_black_24dp" />
+    <TextView android:id="@+id/commentCount"
+              style="@style/footerText"
+              tools:text="comentarios" />
+    <ImageView style="@style/footerIcon"
+               android:src="@drawable/ic_repeat_black_24dp" />
+    <TextView android:id="@+id/retweetCount"
+              style="@style/footerText"
+              tools:text="retweets" />
+    <ImageView style="@style/footerIcon"
+               android:src="@drawable/ic_star_border_black_24dp" />
+    <TextView android:id="@+id/likeCount"
+              style="@style/footerText"
+              tools:text="likes" />
+    <ImageView style="@style/footerIcon"
+               android:src="@drawable/ic_share_black_24dp" />
+    <TextView style="@style/footerText" />
+</LinearLayout>

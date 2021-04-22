@@ -2,52 +2,41 @@ package ar.edu.utn.frba.mobile.clases.ui.main
 
 import android.content.Context
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import ar.edu.utn.frba.mobile.clases.R
-import ar.edu.utn.frba.mobile.clases.databinding.MainFragmentBinding
 
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [MainFragment.OnFragmentInteractionListener] interface
+ * [StatusUpdateFragment.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [MainFragment.newInstance] factory method to
+ * Use the [StatusUpdateFragment.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class MainFragment : Fragment() {
+class StatusUpdateFragment : Fragment() {
+
     private var listener: OnFragmentInteractionListener? = null
-    private lateinit var tweetsAdapter: TweetsAdapter
 
-    private var _binding: MainFragmentBinding? = null
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = MainFragmentBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_status_update, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        tweetsAdapter = TweetsAdapter(listener)
-        binding.list.apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = tweetsAdapter
+        view.findViewById<RecyclerView>(R.id.colorsRecycler).apply {
+            layoutManager = LinearLayoutManager(context).apply {
+                orientation = LinearLayoutManager.HORIZONTAL
+            }
+            adapter = ColorsAdapter()
         }
-    }
-
-    fun onButtonPressed() {
-        listener?.showFragment(StatusUpdateFragment())
     }
 
     override fun onAttach(context: Context) {
@@ -57,17 +46,6 @@ class MainFragment : Fragment() {
         } else {
             throw RuntimeException("$context must implement OnFragmentInteractionListener")
         }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        // Simulamos un request
-        binding.list.visibility = View.GONE
-        binding.progressBar.visibility = View.VISIBLE
-        Handler().postDelayed({
-            binding.list.visibility = View.VISIBLE
-            binding.progressBar.visibility = View.GONE
-        }, 1000)
     }
 
     override fun onDetach() {
@@ -87,7 +65,6 @@ class MainFragment : Fragment() {
      * for more information.
      */
     interface OnFragmentInteractionListener {
-        fun showFragment(fragment: Fragment)
     }
 
     companion object {
@@ -95,9 +72,10 @@ class MainFragment : Fragment() {
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
          *
-         * @return A new instance of fragment MainFragment.
+         * @return A new instance of fragment StatusUpdate.
          */
         @JvmStatic
-        fun newInstance() = MainFragment()
+        fun newInstance() =
+            StatusUpdateFragment()
     }
 }
