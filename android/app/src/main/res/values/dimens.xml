@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="color_size">32dp</dimen>
+
+    <dimen name="profilePicSize">48dp</dimen>
+    <dimen name="itemPadding">8dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+</resources>
