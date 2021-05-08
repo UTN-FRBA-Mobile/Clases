@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ar.edu.utn.frba.mobile.clases.AspectRatioFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:widthHeightRatio="1">
+    <ImageView
+        android:id="@+id/edited_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp" />
+</ar.edu.utn.frba.mobile.clases.AspectRatioFrameLayout>
