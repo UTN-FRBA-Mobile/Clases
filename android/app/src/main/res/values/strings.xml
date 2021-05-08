@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">Clases</string>
-    <string name="salute">¡Hola a todes!</string>
-    <string name="soy_un_button">Soy un Button</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
+    <string name="noImagesMessage">Aquí aparecerán las imágenes editadas.\nPara comenzar a editar, presiona el botón en la parte inferior derecha de la pantalla.</string>
+    <string name="permissionTitle">Necesitamos tu permiso</string>
+    <string name="toggle_list">VER EN LISTA</string>
+    <string name="toggle_grid">VER EN GRILLA</string>
+    <string name="add_image">Agregar imagen</string>
+    <string name="filters">Filtros</string>
+    <string name="calibration">Calibración</string>
+    <string name="cancel">CANCELAR</string>
+    <string name="save">GUARDAR</string>
 </resources>
