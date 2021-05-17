@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hint_celsius">Ingresá la temperatura en Celsius</string>
+    <string name="hint_fahrenheit">Ingresá temperatura en Fahrenheit</string>
+</resources>
