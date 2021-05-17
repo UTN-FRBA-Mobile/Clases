@@ -30,6 +30,15 @@ android {
         viewBinding true
         compose true
     }
+    flavorDimensions "default"
+    productFlavors {
+        primaria {
+            applicationIdSuffix ".primaria"
+        }
+        secundaria {
+            applicationIdSuffix ".secundaria"
+        }
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -67,5 +76,8 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
+
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test:rules:1.5.0'
 
 }
