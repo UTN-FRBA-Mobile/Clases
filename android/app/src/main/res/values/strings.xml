@@ -3,4 +3,11 @@
     <string name="salute">¡Hola a todes!</string>
     <string name="soy_un_button">Soy un Button</string>
     <string name="ok">Ok</string>
+    <string name="decoration">Termómetro</string>
+    <string name="hint_celsius">Ingrese Temperatura en Celsius</string>
+    <string name="unit_celsius">°C</string>
+    <string name="hint_kelvin">Ingrese Temperatura en Kelvin</string>
+    <string name="unit_kelvin">°K</string>
+    <string name="hint_fahrenheit">Ingrese Temperatura en Fahrenheit</string>
+    <string name="unit_fahrenheit">°F</string>
 </resources>

@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/fondo"
     tools:context=".MainViewActivity">
 
     <LinearLayout
@@ -16,6 +17,7 @@
         android:paddingTop="60dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp">
+
 
         <EditText
             android:layout_width="280dp"
@@ -30,54 +32,39 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/unit_celsius"/>
-        <ImageButton
 
+        <ImageButton
             android:id="@+id/botonCelsius"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@android:drawable/stat_notify_sync"
-            app:tint="@color/colorPrimary" />
+            android:backgroundTint="#8cdec6"
+            android:src="@android:drawable/stat_notify_sync" />
     </LinearLayout>
+
+    <EditText
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/temperaturaIngresadaK"
+        android:layout_weight="1"
+        android:autofillHints="false"
+        android:inputType="numberDecimal"
+        android:visibility="gone"/>
+    <ImageButton
+        android:id="@+id/botonKelvin"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp">
-
-        <EditText
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/temperaturaIngresadaK"
-            android:layout_weight="1"
-            android:hint="@string/hint_kelvin"
-            android:autofillHints="false"
-            android:inputType="numberDecimal" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="@string/unit_kelvin"/>
-        <ImageButton
-
-            android:id="@+id/botonKelvin"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@android:drawable/stat_notify_sync"
-            app:tint="@color/colorPrimary" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp">
 
         <EditText
             android:layout_width="280dp"
@@ -91,22 +78,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="@string/unit_fahrenheit"/>
+            android:text="@string/unit_fahrenheit"/>
+
         <ImageButton
 
             android:id="@+id/botonFahrenheit"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@android:drawable/stat_notify_sync"
-            app:tint="@color/colorPrimary" />
+            android:backgroundTint="#8cdec6"
+            android:src="@android:drawable/stat_notify_sync" />
     </LinearLayout>
 
     <ImageView
-        android:paddingTop="30dp"
+        android:paddingTop="50dp"
         android:layout_width="247dp"
         android:layout_height="291dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/termo2" />
+        android:src="@drawable/termokid" />
 </LinearLayout>
-
