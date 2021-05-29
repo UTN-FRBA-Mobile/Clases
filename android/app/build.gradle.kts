@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -55,6 +56,8 @@ dependencies {
     testImplementation(composeBom)
     androidTestImplementation(composeBom)
     val nav_version = "2.8.9"
+    val firebaseBom = platform("com.google.firebase:firebase-bom:33.2.0")
+    implementation("com.google.firebase:firebase-bom:33.12.0")
 
     implementation(fileTree("dir" to "libs", "include" to listOf("*.jar")))
     implementation("androidx.core:core-ktx:1.15.0")
@@ -74,6 +77,9 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    implementation("com.google.firebase:firebase-messaging-ktx:24.1.1")
+    implementation("com.google.firebase:firebase-analytics-ktx:22.4.0")
 }
 java {
     toolchain {
