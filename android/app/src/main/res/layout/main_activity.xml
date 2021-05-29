@@ -1,20 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:background="?attr/colorPrimary"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Firebase token: " />
 
-    <FrameLayout android:id="@+id/container"
+        <TextView
+            android:id="@+id/firebaseToken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="..." />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/copyButton"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="25dp"
+        android:text="Copiar Token"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/reloadButton"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="25dp"
+        android:text="Recargar"/>
+
+    <RelativeLayout
+        android:id="@+id/topicContainer"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/topicLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:layout_alignParentStart="true"
+            android:text="Topic: " />
+        <EditText
+            android:id="@+id/topic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/topicLabel"
+            android:layout_toStartOf="@+id/subscribeButton"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/subscribeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Subscribe"/>
+    </RelativeLayout>
 
 </LinearLayout>

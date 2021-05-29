@@ -1,4 +1,5 @@
 # Clases
 Prácticas de la materia
 
-Cada branch contiene un README.md con el contenido de la práctica.
+# Demo Notificaciones
+Demo básica para configurar una aplicación Android para recibir Push Notifications y mostrarlas como Notificaciones.
