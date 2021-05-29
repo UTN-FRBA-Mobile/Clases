@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -10,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "ar.edu.utn.frba.mobile.clases"
-        minSdk = 21
+        minSdk = 23
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -55,6 +56,8 @@ dependencies {
     testImplementation(composeBom)
     androidTestImplementation(composeBom)
     val nav_version = "2.9.3"
+    val firebaseBom = platform("com.google.firebase:firebase-bom:34.1.0")
+    implementation(firebaseBom)
 
     implementation(fileTree("dir" to "libs", "include" to listOf("*.jar")))
     implementation("androidx.core:core-ktx:1.17.0")
@@ -75,6 +78,9 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.9.0")
+
+    implementation("com.google.firebase:firebase-messaging-ktx:24.1.2")
+    implementation("com.google.firebase:firebase-analytics-ktx:22.5.0")
 }
 java {
     toolchain {
