@@ -3,4 +3,8 @@
     <string name="salute">¡Hola a todes!</string>
     <string name="soy_un_button">Soy un Button</string>
     <string name="ok">Ok</string>
+    <string name="acceptMenu">Aceptar</string>
+    <string name="dontAcceptMenu">No Aceptar</string>
+    <string name="accept">Aceptaste los términos y condiciones. Grosso.</string>
+    <string name="dontAccept">Aceptá los terminos y condiciones, dale.</string>
 </resources>

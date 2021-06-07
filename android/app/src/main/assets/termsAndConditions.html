@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    html {
+        height: 100%;
+    }
+    body {
+        background: #00000000;
+        margin: 0px;
+        height: 100vh;
+        font-family: "HelveticaNeue", "Regular";
+        font-size: 14px;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    .content {
+        display: block;
+        position: absolute;
+        height: auto;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    h2, p {
+        padding: 20px;
+    }
+    .imageHolder {
+        display: block;
+        height: 35%;
+        width: 100%;
+        overflow: hidden;
+    }
+    .fadeImages {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    }
+    .fadeImages img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: auto;
+        height: 100%;
+        margin: auto;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        -webkit-animation-timing-function: ease-in-out;
+        -webkit-animation-iteration-count: infinite;
+        opacity: 0;
+    }
+    .fadeImages.l2r2.animate img {
+        animation-duration: 7s;
+        -webkit-animation-duration: 7s;
+        animation-name: leftToRight2;
+        -webkit-animation-name: leftToRight2;
+    }
+    .fadeImages img:nth-of-type(2) {
+        animation-delay: 3.5s;
+        -webkit-animation-delay: 3.5s;
+    }
+    .fadeImages img:nth-of-type(1) {
+        animation-delay: 0;
+        -webkit-animation-delay: 0;
+    }
+    @-webkit-keyframes leftToRight2 {
+        0% {
+            opacity: 0;
+            transform: translateX(50%);
+        }
+        10% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        50% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        60% {
+            opacity: 0;
+            transform: translateX(-50%);
+        }
+    }
+    button {
+        display: inline-block;
+        background: white;
+        color: #06d;
+        border: 1px solid #06d;
+        border-radius: 8px;
+        padding: 6px;
+        text-decoration: none;
+    }
+    button:active {
+        background: #06d;
+        color: white;
+        -webkit-tap-highlight-color: transparent;
+    }
+</style>
+<script>
+    function setText(text) {
+        document.getElementById("text").innerHTML = text;
+    }
+</script>
+<body>
+
+<div class="content" id="page1">
+    <p>
+        <b>Lorem ipsum</b> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud <i>exercitation</i> ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <h2 id="text">
+        <script>
+            document.write(Clases.getAppName())
+        </script>
+    </h2>
+    <div class="imageHolder">
+        <div class="fadeImages l2r2 animate">
+            <img src="hijitus.png" />
+            <img src="dibu.png" />
+        </div>
+    </div>
+    <p>
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+    </p>
+    <p style="text-align: center">
+        <button onclick="Clases.acceptTermsAndConditions()">Acepto</button>
+        <button onclick="Clases.doNotAcceptTermsAndConditions()">No Acepto</button>
+    </p>
+</div>
+
+</body>
+</html>

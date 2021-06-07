@@ -1,6 +1,7 @@
 package ar.edu.utn.frba.mobile.clases.ui.main
 
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
@@ -21,6 +22,7 @@ import ar.edu.utn.frba.mobile.clases.ui.theme.ClasesTheme
 fun AppScaffold(
     title: String? = null,
     navController: NavController? = null,
+    actions: @Composable RowScope.() -> Unit = {},
     content: @Composable (PaddingValues) -> Unit) {
     val navigationIcon: (@Composable () -> Unit)? =
         if (navController?.previousBackStackEntry != null) {
@@ -40,6 +42,7 @@ fun AppScaffold(
                         Text(text = title ?: stringResource(id = R.string.app_name))
                     },
                     navigationIcon = navigationIcon,
+                    actions = actions,
                 )
             },
             content = {
