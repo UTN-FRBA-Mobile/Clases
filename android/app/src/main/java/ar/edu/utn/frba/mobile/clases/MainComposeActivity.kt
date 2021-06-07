@@ -12,6 +12,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import ar.edu.utn.frba.mobile.clases.ui.main.HomeScreen
+import ar.edu.utn.frba.mobile.clases.ui.main.TermsAndConditionsScreen
 import ar.edu.utn.frba.mobile.clases.ui.theme.ClasesTheme
 
 class MainComposeActivity : ComponentActivity() {
@@ -27,6 +28,13 @@ class MainComposeActivity : ComponentActivity() {
 private fun App() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "home") {
-        composable("home") { HomeScreen() }
+        composable("home") {
+            HomeScreen(
+                onTCClick = { navController.navigate("termsAndConditions") },
+                navController = navController)
+        }
+        composable("termsAndConditions") {
+            TermsAndConditionsScreen(navController)
+        }
     }
 }
