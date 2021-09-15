@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/loseFragment"
+        android:name="ar.edu.utn.frba.mobile.clases.LoseFragment"
+        android:label="fragment_lose"
+        tools:layout="@layout/fragment_lose" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="ar.edu.utn.frba.mobile.clases.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="ar.edu.utn.frba.mobile.clases.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_winFragment"
+            app:destination="@id/winFragment" />
+        <action
+            android:id="@+id/action_quizFragment_to_loseFragment"
+            app:destination="@id/loseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/winFragment"
+        android:name="ar.edu.utn.frba.mobile.clases.WinFragment"
+        android:label="fragment_win"
+        tools:layout="@layout/fragment_win" />
+</navigation>

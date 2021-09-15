@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:context=".LoseFragment"
+    android:orientation="vertical">
+    <ImageView
+        android:src="@drawable/try_again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center"
+        android:id="@+id/imageViewTryAgain"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/leyenda"
+        android:text="Probá de nuevo!!!"
+        android:layout_gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2" android:textSize="45sp"
+        android:textStyle="bold" android:fontFamily="sans-serif-smallcaps" android:typeface="monospace"
+        android:textColor="@android:color/background_dark"/>
+    <Button
+        android:layout_marginTop="70dp"
+        android:layout_width="207dp"
+        android:layout_height="97dp"
+        android:id="@+id/botonPlay"
+        android:layout_gravity="center_horizontal"
+        android:text="REINTENTAR"
+        style="@style/Widget.AppCompat.Button" android:fontFamily="sans-serif-smallcaps" android:textSize="24sp"/>
+
+</LinearLayout>

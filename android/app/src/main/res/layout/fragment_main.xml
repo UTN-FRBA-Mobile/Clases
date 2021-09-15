@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainFragment"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="350dp"
+        android:layout_height="232dp"
+
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/android_student" />
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/titulo"
+        android:text="Trivia ANDROID"
+        android:layout_gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2" android:textSize="45sp"
+        android:textStyle="bold" android:fontFamily="sans-serif-smallcaps" android:typeface="monospace"
+        android:textColor="@android:color/background_dark"/>
+
+    <EditText
+        android:id="@+id/nombreAlumno"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:hint="Ingrese su Nombre" />
+
+
+    <Button
+        android:id="@+id/botonPlay"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="207dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="INICIAR"
+        android:textSize="24sp" />
+    <Button
+        android:layout_marginTop="20dp"
+        android:text="Acerca de..."
+        android:layout_width="207dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/buttonAbout"/>
+
+</LinearLayout>

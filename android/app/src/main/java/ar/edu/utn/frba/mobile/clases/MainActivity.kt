@@ -2,22 +2,14 @@ package ar.edu.utn.frba.mobile.clases
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import ar.edu.utn.frba.mobile.clases.databinding.MainActivityBinding
-import ar.edu.utn.frba.mobile.clases.ui.main.MainFragment
+import ar.edu.utn.frba.mobile.clases.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: MainActivityBinding
-
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = MainActivityBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
-                .commitNow()
-        }
+        setContentView(R.layout.activity_main)
+
     }
 }

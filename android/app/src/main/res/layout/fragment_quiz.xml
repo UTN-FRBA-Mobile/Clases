@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizFragment"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="237dp"
+        android:layout_height="225dp"
+
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/android_search" />
+
+    <TextView
+        android:id="@+id/rtaNombreAlumno"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:layout_gravity="center"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="vas a promocionar la materia este cuatrimestre?"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold" />
+
+    <RadioGroup android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <RadioButton
+            android:layout_marginTop="30dp"
+            android:id="@+id/radio_si"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text=" SEGURO!!!!"
+            android:fontFamily="sans-serif-smallcaps" android:textSize="24sp"
+            android:textAlignment="center"
+            style="@android:style/Widget.Holo.CompoundButton.RadioButton"
+            android:buttonTint="@color/colorPrimaryDark"/>
+
+        <RadioButton
+            android:layout_marginTop="18dp"
+            android:id="@+id/radio_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" MMMM NO SE..."
+            android:fontFamily="sans-serif-smallcaps" android:textSize="24sp"
+            android:buttonTint="@color/colorPrimaryDark"
+            style="@android:style/Widget.Material.Light.CompoundButton.RadioButton"/>
+    </RadioGroup>
+    <Button
+        android:layout_marginTop="30dp"
+        android:text="ENVIAR"
+        android:id="@+id/botonSubmit"
+        android:layout_width="160dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="60dp" android:textAlignment="center"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textStyle="bold" android:textSize="24sp"/>
+
+
+</LinearLayout>
