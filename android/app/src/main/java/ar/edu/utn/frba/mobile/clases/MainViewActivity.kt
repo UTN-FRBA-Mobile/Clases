@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import ar.edu.utn.frba.mobile.clases.databinding.MainActivityBinding
 import ar.edu.utn.frba.mobile.clases.ui.main.MainFragment
 
-class MainActivity : AppCompatActivity() {
+class MainViewActivity : AppCompatActivity() {
 
     lateinit var binding: MainActivityBinding
 
