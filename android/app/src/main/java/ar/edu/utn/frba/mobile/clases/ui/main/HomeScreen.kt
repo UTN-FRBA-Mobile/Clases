@@ -13,6 +13,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -69,11 +70,13 @@ fun TemperatureInput(@StringRes hint: Int, @StringRes unit: Int, value: Double?,
             },
             modifier = Modifier
                 .weight(1f)
+                .testTag(stringResource(unit))//Acá para identificar en base a la unidad de temp
         )
         Button(
             onClick = { text.toDoubleOrNull()?.let(setValue) },
             modifier = Modifier
                 .padding(start = 10.dp)
+                .testTag(stringResource(hint))
         ) {
             Image(
                 painter = painterResource(id = android.R.drawable.stat_notify_sync),
