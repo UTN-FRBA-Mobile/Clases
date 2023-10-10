@@ -1,4 +1,4 @@
-# Clases-2021c1
+# Clases
 ## Práctica de Test
 
 Este proyecto contiene una aplicación que permite realizar conversiones entre distintas unidades de temperatura. El usuario ingresa un valor y al presionar el botón, se calcula la temperatura en las restantes escalas.
@@ -46,35 +46,21 @@ Se armó un test de interfaz ("botonesDesactivadosSinTexto ()", dentro de la cla
 
 **Para más información de test Unitarios pueden ir al siguiente link:  [https://developer.android.com/training/testing/unit-testing/local-unit-tests](https://developer.android.com/training/testing/unit-testing/local-unit-tests)**
 
-## Apéndice Test de UI (Espresso)
+## Apéndice Test de UI 
 
--   Para poder hacer referencia a una view en particular, utilizamos el siguiente código onView(withId(R.id.ID_DE_LA_VIEW))
+- composeTestRule = createComposeRule(), esta llamada me permite trabajar con el contenido de Compose.
 
--   Luego podemos utilizar distintos métodos de chequeos mediante el método "check" onView(withId(R.id.ID_DE_LA_VIEW)).check(ViewAssertion)
+- Dentro de los buscadores más utilizados están: onNode, onAllNodes,onNodeWithText,onNodewithContentDescription. 
 
--   O podemos ejecutar acciones sobre la interfaz, utilizando el método "perform" onView(withId(R.id.ID_DE_LA_VIEW)).perform(ViewAction)
+- Ej:composeTestRule.onNode(hasText("Button"))
+
+- Para ver el árbol semántico: composeTestRule.onRoot().printToLog("TAG")
+
+- Para ver el árbol separado: composeTestRule.onRoot(useUnmergedTree = true).printToLog("TAG")
+
+- Ejemplo de acción: composeTestRule.onNode(...).performClick()
+
+- No se pueden encadenar acciones dentro de una función de ejecución. Se deben hacer varias llamadas a "perform()"
 
 
-### Algunos métodos destacados:
-
-- onView: Devuelve una interacción a partir de un matcher
-
-- withId / withText: Devuelve un matcher a partir de un id o texto de la pantalla
-
-- check: Evalua una expresión para una interacción determinada utilizando matches.
-
-- matches: Determina si una expresión es válida para determinada interacción
-
-- not: negación
-
-- perform: ejecuta una acción determinada sobre una interacción
-
-- click: Simula un click
-
-- typeText: simula la escritura de un texto
-
-**Ej: onView(withId(resId)).check(matches(not(isDisplayed())));**
-
-**Ej: onView(withId(resId)).perform(click());**
-
-**Para más información de Test de Interfaz pueden ir al siguiente link:[https://developer.android.com/training/testing/espresso/basics](https://developer.android.com/training/testing/espresso/basics)**
+**Para consultar el resumen de test pueden ir al siguiente link:[https://developer.android.com/jetpack/compose/testing-cheatsheet?hl=es-419](https://developer.android.com/jetpack/compose/testing-cheatsheet?hl=es-419)**
