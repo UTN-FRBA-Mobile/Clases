@@ -13,9 +13,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -51,6 +53,9 @@ fun HomeScreen(navController: NavController? = null) {
 @Composable
 fun TemperatureInput(@StringRes hint: Int, @StringRes unit: Int, value: Double?, setValue: (Double) -> Unit, modifier: Modifier) {
     val (text, setText) = remember(value) { mutableStateOf(value?.toString() ?: "" )}
+    val textStyle = TextStyle(
+        color = Color.Black
+    )
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier) {
@@ -58,6 +63,7 @@ fun TemperatureInput(@StringRes hint: Int, @StringRes unit: Int, value: Double?,
             value = text,
             onValueChange = setText,
             singleLine = true,
+            textStyle = textStyle,
             trailingIcon = {
                 Text(
                     text = stringResource(id = unit),
@@ -66,6 +72,7 @@ fun TemperatureInput(@StringRes hint: Int, @StringRes unit: Int, value: Double?,
             placeholder = {
                 Text(
                     text = stringResource(hint),
+                    style = textStyle,
                     fontSize = 11.sp)
             },
             modifier = Modifier
@@ -80,7 +87,7 @@ fun TemperatureInput(@StringRes hint: Int, @StringRes unit: Int, value: Double?,
         ) {
             Image(
                 painter = painterResource(id = android.R.drawable.stat_notify_sync),
-                contentDescription = "")
+                contentDescription = stringResource(hint))
         }
     }
 }
