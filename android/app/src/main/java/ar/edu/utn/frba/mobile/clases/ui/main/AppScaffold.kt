@@ -2,9 +2,14 @@ package ar.edu.utn.frba.mobile.clases.ui.main
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.*
+import androidx.compose.material.IconButton
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -23,7 +28,7 @@ fun AppScaffold(
                 IconButton(onClick = {
                     navController.popBackStack()
                 }) {
-                    Icons.Filled.ArrowBack
+                    Icons.AutoMirrored.Filled.ArrowBack
                 }
             }
         } else null
