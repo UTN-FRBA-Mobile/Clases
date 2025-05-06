@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Clases</string>
     <string name="salute">¡Hola a todes!</string>
-    <string name="soy_un_button">Soy un Button</string>
-    <string name="ok">Ok</string>
+    <string name="main_go_to_coroutines">Go To Coroutines Screen</string>
+    <string name="coroutines_sample_1">Sample 1</string>
+    <string name="coroutines_sample_2">Sample 2</string>
+    <string name="coroutines_sample_3">Sample 3</string>
+    <string name="coroutines_test">Test</string>
 </resources>
