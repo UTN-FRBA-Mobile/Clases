@@ -1,7 +1,9 @@
 package ar.edu.utn.frba.mobile.clases.ui.main
 
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.statusBars
 import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
@@ -40,6 +42,7 @@ fun AppScaffold(
                         Text(text = title ?: stringResource(id = R.string.app_name))
                     },
                     navigationIcon = navigationIcon,
+                    windowInsets = WindowInsets.statusBars
                 )
             },
             content = {
